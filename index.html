@@ -10,13 +10,10 @@
         <button id="Change" class="active">换人</button>
         <button id="texure" class="active">换衣服</button>
         <text>当前：模型编号 </text><text id="model_id"></text><text>；衣服编号 </text><text id="texure_id"></text>
-        <input type="number" id="model" placeholder="模型编号">
-        <input type="number" id="Texure" placeholder="衣服编号">
         <a href="live2d_3">Live2d Cubism 3</a>
         <a target="_blank" href="https://github.com/imuncle/live2d">Github</a>
     </div>
 
-    <h3>Live2D 看板娘 v1.4 / Demo 2</h3>
     <ul>
         <li><a href="" style="color: #38A3DB; text-decoration: none;" title="常规博客引用推荐">Demo 1 - 常规引用</a></li>
         <li><span title="一般网站引用推荐">Demo 2 - 自动加载 autoload.js</span></li>
@@ -77,7 +74,9 @@
             loadlive2d("live2d", ModelDefine.MODELS[current_model_id-1][current_texure_id-1]);
         })
         
+        
         // loadlive2d("live2d", "model/22/model.default.json");
+    
     
     </script>
 </body>
