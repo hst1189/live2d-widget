@@ -127,10 +127,12 @@
     -moz-osx-font-smoothing: grayscale
 }
 
+
 .fui-home:before {content: "\e62e"}
-.fui-chat:before {content: "\e0b7"}
-.fui-eye:before {content: "\ef4e"}
-.fui-user:before {content: "\e9ec"}
-.fui-photo:before {content: "\e412"}
-.fui-info-circle:before {content: "\e88e"}
-.fui-cross:before {content: "\e9ba"}
+.fui-chat:before {content: "\e62d"}
+.fui-eye:before {content: "\e62c"}
+.fui-user:before {content: "\e631"}
+.fui-photo:before {content: "\e62a"}
+.fui-info-circle:before {content: "\e60f"}
+.fui-cross:before {content: "\e609"}
+
