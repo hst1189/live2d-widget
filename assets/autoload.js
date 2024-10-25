@@ -1,7 +1,5 @@
 try {
     $("<link>").attr({href: "//www.grapehut.us.kg/live2d/assets/waifu.min.css", rel: "stylesheet", type: "text/css"}).appendTo('head');
-    $("<script >").attr({src: "//www.grapehut.us.kg/live2d/assets/jquery.min.js"}).appendTo('head');
-    $("<script >").attr({src: "//www.grapehut.us.kg/live2d/assets/jquery-ui.min.js"}).appendTo('head');
     $('body').append('<div class="waifu"><div class="waifu-tips"></div><canvas id="live2d" class="live2d"></canvas><div class="waifu-tool"><span class="fui-home"></span> <span class="fui-chat"></span> <span class="fui-eye"></span> <span class="fui-user"></span> <span class="fui-photo"></span> <span class="fui-info-circle"></span> <span class="fui-cross"></span></div></div>');
     $.ajax({url: '//www.grapehut.us.kg/live2d/assets/waifu-tips.min.js', dataType:"script", cache: true, success: function() {
         $.ajax({url: '//www.grapehut.us.kg/live2d/assets/live2d.min.js', dataType:"script", cache: true, success: function() {
