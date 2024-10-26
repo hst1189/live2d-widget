@@ -4,21 +4,23 @@ try {
     $.ajax({
         url: '//www.grapehut.us.kg/live2d-widget/assets/waifu-tips.min.js',
         dataType: "script",
-        cache: true,
+        cache: false,
         success: function() {
            $.ajax({
                 url: '//www.grapehut.us.kg/live2d-widget/assets/ModelDefine.js',
                 dataType: "script",
-                cache: true,
+                cache: false,
                 success: function() {
                     $.ajax({
                         url: '//www.grapehut.us.kg/live2d-widget/assets/live2d.min.js',
                         dataType: "script",
-                        cache: true,
+                        cache: false,
                         success: function() {
                             /* 可直接修改部分参数 在initModel 前添加*/
                             // live2d_settings['modelId'] = 5;
                             // live2d_settings['modelTexturesId'] = 1;
+
+                            /* 初始化*/ 
                             initModel('//www.grapehut.us.kg/live2d-widget/assets/waifu-tips.json');
                         }
                     });
