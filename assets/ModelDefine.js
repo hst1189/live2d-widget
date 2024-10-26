@@ -123,7 +123,7 @@ var ModelDefine = {
 
 
 
-
+/* 拖拽屏幕定位 */
 this.canvas = document.getElementById("live2d");
 if (this.canvas.addEventListener) {
     this.canvas.addEventListener("click", mouseEvent, false);
