@@ -75,20 +75,26 @@
             ]
         },
         "referrer_hostname": {
-            "example.com": [
-                "示例网站"
-            ],
-            "www.fghrsh.net": [
-                "FGHRSH 的博客"
-            ]
+            "example.com": ["示例网站"],
+            "www.fghrsh.net": ["FGHRSH 的博客"]
         },
-        "model_message": {
-            "1": [
-                "来自 Potion Maker 的 Pio 酱 ~"
-            ],
-            "2": [
-                "来自 Potion Maker 的 Tia 酱 ~"
-            ]
+        "model": {
+            {
+            "id": "1",
+            "message": ["来自 Potion Maker 的 A 酱 ~"]
+            },
+            {
+            "id": "2",
+            "message": ["来自 Potion Maker 的 B 酱 ~"]
+            },
+            {
+            "id": "3",
+            "message": ["来自 Potion Maker 的 C 酱 ~"]
+            },
+            {
+            "id": "4",
+            "message": ["来自 Potion Maker 的 D 酱 ~"]
+            }        
         },
         "hitokoto_api_message": {
             "lwl12.com": [
@@ -96,15 +102,9 @@
                 "，是 <span style=\"color:#0099cc;\">{creator}</span> 投稿的",
                 "。"
             ],
-            "fghrsh.net": [
-                "这句一言出处是 <span style=\"color:#0099cc;\">『{source}』</span>，是 <span style=\"color:#0099cc;\">FGHRSH</span> 在 {date} 收藏的！"
-            ],
-            "jinrishici.com": [
-                "这句诗词出自 <span style=\"color:#0099cc;\">《{title}》</span>，是 {dynasty}诗人 {author} 创作的！"
-            ],
-            "hitokoto.cn": [
-                "这句一言来自 <span style=\"color:#0099cc;\">『{source}』</span>，是 <span style=\"color:#0099cc;\">{creator}</span> 在 hitokoto.cn 投稿的。"
-            ]
+            "fghrsh.net": ["这句一言出处是 <span style=\"color:#0099cc;\">『{source}』</span>，是 <span style=\"color:#0099cc;\">FGHRSH</span> 在 {date} 收藏的！"],
+            "jinrishici.com": ["这句诗词出自 <span style=\"color:#0099cc;\">《{title}》</span>，是 {dynasty}诗人 {author} 创作的！"],
+            "hitokoto.cn": ["这句一言来自 <span style=\"color:#0099cc;\">『{source}』</span>，是 <span style=\"color:#0099cc;\">{creator}</span> 在 hitokoto.cn 投稿的。"]
         }
     },
     "mouseover": [
