@@ -1,8 +1,5 @@
 var ModelDefine = {
 
-    //是否允许拖拽，默认为true
-    IS_DRAGABLE: true,
-
     /**
      *  模型定义
         自定义配置模型，同一数组内放置同个模型的不同皮肤，换肤时按照顺序依次显示
@@ -120,47 +117,3 @@ var ModelDefine = {
         ["model/z16/z16.model.json"]
     ]
 };
-
-
-
-/* 拖拽屏幕定位 */
-this.canvas = document.getElementById("live2d");
-if (this.canvas.addEventListener) {
-    this.canvas.addEventListener("click", mouseEvent, false);
-    this.canvas.addEventListener("mousedown", mouseEvent, false);
-    this.canvas.addEventListener("mouseup", mouseEvent, false);
-    this.canvas.addEventListener("mousemove", mouseEvent, false);
-}
-
-var isDragging = false;
-var mouseOffsetx = 0;
-var mouseOffsety = 0;
-function mouseEvent(e) {
-    e.preventDefault();
-    if (e.type == "mousedown") {
-        if ("button" in e && e.button != 0){
-            return;
-        }
-        isDragging = true;
-        mouseOffsetx = e.pageX - document.getElementById("live2d").offsetLeft;
-        mouseOffsety = e.pageY - document.getElementById("live2d").offsetTop;
-    } else if (e.type == "mousemove") {
-        if(isDragging == true) {
-            var movex = e.pageX - mouseOffsetx;
-            var movey = e.pageY - mouseOffsety;
-            if(movex > window.innerWidth - document.getElementById("live2d").width)
-                movex = window.innerWidth - document.getElementById("live2d").width;
-            if(movex < 0) movex = 0;
-            if(movey > window.innerHeight - document.getElementById("live2d").height)
-                movey = window.innerHeight - document.getElementById("live2d").height;
-            if(movey < 0) movey = 0;
-            if(LAppDefine.IS_DRAGABLE) {
-                document.getElementById("live2d").style.left = movex + "px";
-                document.getElementById("live2d").style.top = movey + "px";
-            }
-        }
-    } else if (e.type == "mouseup") {
-        if ("button" in e && e.button != 0) return;
-        isDragging = false;
-    }
-}
