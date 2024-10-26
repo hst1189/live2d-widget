@@ -79,22 +79,9 @@
             "www.fghrsh.net": ["FGHRSH 的博客"]
         },
         "model": {
-            {
-            "id": "1",
-            "message": ["来自 Potion Maker 的 A 酱 ~"]
-            },
-            {
-            "id": "2",
-            "message": ["来自 Potion Maker 的 B 酱 ~"]
-            },
-            {
-            "id": "3",
-            "message": ["来自 Potion Maker 的 C 酱 ~"]
-            },
-            {
-            "id": "4",
-            "message": ["来自 Potion Maker 的 D 酱 ~"]
-            }        
+            "message": [
+                "来自 Potion Maker 的 A 酱 ~"
+            ]
         },
         "hitokoto_api_message": {
             "lwl12.com": [
