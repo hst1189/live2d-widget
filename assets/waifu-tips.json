@@ -4,10 +4,7 @@
         "copy_message": ["你都复制了些什么呀，转载要记得加上出处哦"],
         "screenshot_message": ["照好了嘛，是不是很可爱呢？"],
         "hidden_message": ["我们还能再见面的吧…"],
-        "load_rand_textures": [
-            "我还没有其他衣服呢",
-            "我的新衣服好看嘛"
-        ],
+        "load_rand_textures": ["我还没有其他衣服呢", "我的新衣服好看嘛"],
         "hour_tips": {
             "t5-7": ["早上好！一日之计在于晨，美好的一天就要开始了"],
             "t7-11": ["上午好！工作顺利嘛，不要久坐，多起来走动走动哦！"],
@@ -20,33 +17,12 @@
             "default": ["一寸光阴一寸金，美好的一天从现在开始！"]
         },
         "referrer_message": {
-            "baidu": [
-                "Hello! 来自 百度搜索 的朋友<br>你是搜索 <span style=\"color:#0099cc;\">",
-                "</span> 找到的我吗？"
-            ],
-            "so": [
-                "Hello! 来自 360搜索 的朋友<br>你是搜索 <span style=\"color:#0099cc;\">",
-                "</span> 找到的我吗？"
-            ],
-            "google": [
-                "Hello! 来自 谷歌搜索 的朋友<br>欢迎阅读<span style=\"color:#0099cc;\">『",
-                "』</span>",
-                " - "
-            ],
-            "default": [
-                "Hello! 来自 <span style=\"color:#0099cc;\">",
-                "</span> 的朋友"
-            ],
-            "localhost": [
-                "欢迎来到<span style=\"color:#0099cc;\">『",
-                "』</span>",
-                " - "
-            ],
-            "none": [
-                "欢迎来到<span style=\"color:#0099cc;\">『",
-                "』</span>",
-                " - "
-            ]
+            "baidu": ["Hello! 来自 百度搜索 的朋友<br>你是搜索 <span style=\"color:#0099cc;\">","</span> 找到的我吗？"],
+            "so": ["Hello! 来自 360搜索 的朋友<br>你是搜索 <span style=\"color:#0099cc;\">","</span> 找到的我吗？"],
+            "google": ["Hello! 来自 谷歌搜索 的朋友<br>欢迎阅读<span style=\"color:#0099cc;\">『","』</span>"," - "],
+            "default": ["Hello! 来自 <span style=\"color:#0099cc;\">","</span> 的朋友"],
+            "localhost": ["欢迎来到<span style=\"color:#0099cc;\">『","』</span>"," - "],
+            "none": ["欢迎来到<span style=\"color:#0099cc;\">『","』</span>"," - "]
         },
         "referrer_hostname": {
             "example.com": ["示例网站"],
@@ -56,8 +32,8 @@
             "message": ["我是来自 P星球的 Potion酱 ~ 请多关照！"]
         },
         "hitokoto_api_message": {
-            "jinrishici.com": ["这句诗词出自 <span style=\"color:#0099cc;\">《{title}》</span>，是 {dynasty}诗人 {author} 创作的！"],
-            "hitokoto.cn": ["这句一言来自 <span style=\"color:#0099cc;\">『{source}』</span>，是 <span style=\"color:#0099cc;\">{creator}</span> 在 hitokoto.cn 投稿的。"]
+            "jinrishici.com": ["本诗词出自 <span style=\"color:#0099cc;\">《{title}》</span>，是 {dynasty}诗人 {author} 的创作。"],
+            "hitokoto.cn": ["本金句出自 <span style=\"color:#0099cc;\">『{source}』</span>，是 <span style=\"color:#0099cc;\">{creator}</span> 的投稿。"]
         }
     },
     
