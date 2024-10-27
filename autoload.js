@@ -17,7 +17,8 @@ try {
                         cache: false,
                         success: function() {
                             /* 可直接修改部分参数 在initModel 前添加*/
-                            live2d_settings['modelId'] = Math.floor(Math.random() * ModelDefine.MODELS.length + 1) - 1;
+                            var id=Math.floor(Math.random() * ModelDefine.MODELS.length + 1) - 1;
+                            live2d_settings['modelId'] = id;
                             // live2d_settings['modelTexturesId'] = 0;
                         
                             /* 初始化*/ 
