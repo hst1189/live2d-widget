@@ -1,43 +1,16 @@
 # live2d
+
+## Live2d Cubism 2　使用说明
+
+直接引用：
+```
+<script src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/hst1189/live2d-widget/autoload.js'></script>
+```
+
 live2d模型收集+展示，可直接用于静态网站
-
-# 展示页面
-* [Live2d Cubism 2](https://imuncle.github.io/live2d)
-* [Live2d Cubism 3](https://imuncle.github.io/live2d/live2d_3)
-
-以上页面国内访问较慢，而模型较大，可以访问以下地址：
-
-* [Live2d Cubism 2](http://119.23.8.25/live2d)
-* [Live2d Cubism 3](http://119.23.8.25/live2d/live2d_3)
-
 目前共计收录**128**个模型。
-
-# 使用说明
-## Live2d Cubism 2
-* 引用必要的`js`文件：
-```html
-<script src="js/live2d.js"></script>
-```
-* 添加`canvas`元素：
-```html
-<canvas class="live2d" id="live2d" width="300" height="800"></canvas>
-```
-* 添加`css`样式（非必须，可自定义）：
-```html
-<style>
-    .live2d {
-        position: fixed;
-        bottom : 0;
-        left : 0;
-    }
-</style>
-```
-* 初始化live2d：
-```js
-loadlive2d("live2d", "./model.json");
-```
-
-* `LAppDefine.js`为live2d的配置文件，具体的配置信息见注释。
 
 * `model`文件夹下是live2d的模型文件，目前已收录**102**种，其中数种模型有可更换皮肤。
 模型文件夹的目录大体如下：
