@@ -1,4 +1,4 @@
-# live2d
+# live2d模型收集+展示，可直接用于静态网站
 
 ## Live2d Cubism 2　使用说明
 
@@ -9,7 +9,11 @@
 <script src='https://cdn.jsdelivr.net/gh/hst1189/live2d-widget/autoload.js'></script>
 ```
 
-live2d模型收集+展示，可直接用于静态网站
+## 参考API
+https://github.com/fghrsh/live2d_api
+
+
+## live2d模型
 目前共计收录**128**个模型。
 
 * `model`文件夹下是live2d的模型文件，目前已收录**102**种，其中数种模型有可更换皮肤。
@@ -27,6 +31,9 @@ live2d模型收集+展示，可直接用于静态网站
 |__model.moc（模型本体）
 ```
 部分模型有所不同。
+
+
+
 
 ## Live2d Cubism 3
 以上内容都是基于旧的Cubism Editor 2制作与开发，现在官网老早就使用~~Cubism 3了（详见[Cubism 3 | Live2D](https://www.live2d.com/en/products/cubism3)）~~ 已经到了Cubism 4了，不过与Cubism 3是兼容的，而且官方承诺以后的版本都向下兼容（除了Cubism 2）。
