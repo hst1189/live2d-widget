@@ -1,5 +1,5 @@
-const express = require('express');
-const app = express();
+// const express = require('express');
+// const app = express();
 
 // 自定义配置模型，同一数组内放置同个模型的不同皮肤，换肤时按照顺序依次显示
 // 这里请用相对路径配置
@@ -115,6 +115,7 @@ const ModelDefine = {
     ]
 };
 
+/*
 // GET 接口：api/get?id=1-1
 app.get('/api/get', (req, res) => {
   const id = req.query.id; // 例如 "1-1"
@@ -142,3 +143,4 @@ app.get('/api/get', (req, res) => {
   res.json({ value: ModelDefine.MODELS[row][col] });
   console.log(ModelDefine.MODELS[row][col] });
 });
+*/
