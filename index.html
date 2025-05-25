@@ -4,6 +4,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Live2D 看板娘 v1.0 Demo</title>
     <link rel="icon" href="avatar.png">
+
+    <style>
+        /* 全要素でスクロール禁止 */
+        html,
+        body {
+            overflow: hidden;
+        }
+
+        /* スクロールさせたい要素のスタイル（overflow: auto;） */
+        .can-scroll {
+        width: max-content;
+        height: 200px;
+        background-color: orange;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: auto;
+        }
+    </style>    
 </head>
 <body style="font-family: 'Microsoft YaHei';">
     <div style="position:fixed; top:0px; left:600px; background-color: white;">
@@ -18,7 +37,7 @@
     </div>
 
     <h3>Live2D 角色配置一览 json </h3>
-    <textarea rows="50" cols="80"><ol id="model_info" style="margin-top:0px ;"></ol></textarea>
+    <div class="can-scroll"><ol id="model_info" style="margin-top:0px ;"></ol></div>
 
     <!-- 动态加载 canvas live2d   添加以下2个jQuery，1个aotuload.js-->
 
