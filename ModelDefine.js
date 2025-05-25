@@ -1,10 +1,9 @@
-var ModelDefine = {
+const express = require('express');
+const app = express();
 
-    /**
-     *  模型定义
-        自定义配置模型，同一数组内放置同个模型的不同皮肤，换肤时按照顺序依次显示
-        这里请用相对路径配置
-     */
+// 自定义配置模型，同一数组内放置同个模型的不同皮肤，换肤时按照顺序依次显示
+// 这里请用相对路径配置
+const ModelDefine = {
     MODELS: [
         ["model/bilibili/22/model.default.json", "model/bilibili/22/model.2016.xmas.1.json", "model/bilibili/22/model.2016.xmas.2.json", "model/bilibili/22/model.2017.cba-normal.json", "model/bilibili/22/model.2017.cba-super.json", "model/bilibili/22/model.2017.newyear.json", "model/bilibili/22/model.2017.school.json", "model/bilibili/22/model.2017.summer.normal.1.json", "model/bilibili/22/model.2017.summer.normal.2.json", "model/bilibili/22/model.2017.summer.super.1.json", "model/bilibili/22/model.2017.summer.super.2.json", "model/bilibili/22/model.2017.tomo-bukatsu.high.json", "model/bilibili/22/model.2017.tomo-bukatsu.low.json", "model/bilibili/22/model.2017.valley.json", "model/bilibili/22/model.2017.vdays.json", "model/bilibili/22/model.2018.bls-summer.json", "model/bilibili/22/model.2018.bls-winter.json", "model/bilibili/22/model.2018.lover.json", "model/bilibili/22/model.2018.spring.json"], 
         ["model/bilibili/33/model.default.json", "model/bilibili/33/model.2016.xmas.1.json", "model/bilibili/33/model.2016.xmas.2.json", "model/bilibili/33/model.2017.cba-normal.json", "model/bilibili/33/model.2017.cba-super.json", "model/bilibili/33/model.2017.newyear.json", "model/bilibili/33/model.2017.school.json", "model/bilibili/33/model.2017.summer.normal.1.json", "model/bilibili/33/model.2017.summer.normal.2.json", "model/bilibili/33/model.2017.summer.super.1.json", "model/bilibili/33/model.2017.summer.super.2.json", "model/bilibili/33/model.2017.tomo-bukatsu.high.json", "model/bilibili/33/model.2017.tomo-bukatsu.low.json", "model/bilibili/33/model.2017.valley.json", "model/bilibili/33/model.2017.vdays.json", "model/bilibili/33/model.2018.bls-summer.json", "model/bilibili/33/model.2018.bls-winter.json", "model/bilibili/33/model.2018.lover.json", "model/bilibili/33/model.2018.spring.json"],
@@ -115,3 +114,31 @@ var ModelDefine = {
         ["model/z16/z16.model.json"]
     ]
 };
+
+// GET 接口：api/get?id=1-1
+app.get('/api/get', (req, res) => {
+  const id = req.query.id; // 例如 "1-1"
+  if (!id) {
+    return res.status(400).json({ error: '缺少 id 参数' });
+  }
+
+  // 解析 id
+  const match = id.match(/^(\d+)-(\d+)$/);
+  if (!match) {
+    return res.status(400).json({ error: 'id 格式错误，应为 1-1 这样的格式' });
+  }
+  const row = parseInt(match[1], 10) - 1;
+  const col = parseInt(match[2], 10) - 1;
+
+  if (
+    row < 0 ||
+    col < 0 ||
+    row >= ModelDefine.MODELS.length ||
+    col >= ModelDefine.MODELS[row].length
+  ) {
+    return res.status(404).json({ error: '未找到对应的模型' });
+  }
+
+  res.json({ value: ModelDefine.MODELS[row][col] });
+  console.log(ModelDefine.MODELS[row][col] });
+});
