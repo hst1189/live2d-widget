@@ -1,9 +1,12 @@
-// const express = require('express');
-// const app = express();
+/*
+const express = require('express');
+const app = express();
+*/
 
 // 自定义配置模型，同一数组内放置同个模型的不同皮肤，换肤时按照顺序依次显示
 // 这里请用相对路径配置
-const ModelDefine = {
+// const ModelDefine = {
+var ModelDefine = {
     MODELS: [
         ["model/Alice/model.json"],
         ["model/bilibili/22/model.default.json", "model/bilibili/22/model.2016.xmas.1.json", "model/bilibili/22/model.2016.xmas.2.json", "model/bilibili/22/model.2017.cba-normal.json", "model/bilibili/22/model.2017.cba-super.json", "model/bilibili/22/model.2017.newyear.json", "model/bilibili/22/model.2017.school.json", "model/bilibili/22/model.2017.summer.normal.1.json", "model/bilibili/22/model.2017.summer.normal.2.json", "model/bilibili/22/model.2017.summer.super.1.json", "model/bilibili/22/model.2017.summer.super.2.json", "model/bilibili/22/model.2017.tomo-bukatsu.high.json", "model/bilibili/22/model.2017.tomo-bukatsu.low.json", "model/bilibili/22/model.2017.valley.json", "model/bilibili/22/model.2017.vdays.json", "model/bilibili/22/model.2018.bls-summer.json", "model/bilibili/22/model.2018.bls-winter.json", "model/bilibili/22/model.2018.lover.json", "model/bilibili/22/model.2018.spring.json"], 
