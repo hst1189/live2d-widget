@@ -7,7 +7,8 @@ try {
         cache: false,
         success: function() {
             $.ajax({
-                url: '//cdn.jsdelivr.net/gh/hst1189/live2d-widget/assets/waifu-tips.min.js',
+                url: '/assets/waifu-tips.min.js',
+                //url: '//cdn.jsdelivr.net/gh/hst1189/live2d-widget/assets/waifu-tips.min.js',
                 dataType: "script",
                 cache: false,
                 success: function() {
