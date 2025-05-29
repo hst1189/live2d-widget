@@ -1,20 +1,25 @@
-/*
-const express = require('express');
-const app = express();
-*/
+// const express = require('express');
+// const app = express();
 
 // 自定义配置模型，同一数组内放置同个模型的不同皮肤，换肤时按照顺序依次显示
 // 这里请用相对路径配置
-// const ModelDefine = {
-var ModelDefine = {
+const ModelDefine = {
     MODELS: [
-        ["model/Alice/model.json"],
         ["model/bilibili/22/model.default.json", "model/bilibili/22/model.2016.xmas.1.json", "model/bilibili/22/model.2016.xmas.2.json", "model/bilibili/22/model.2017.cba-normal.json", "model/bilibili/22/model.2017.cba-super.json", "model/bilibili/22/model.2017.newyear.json", "model/bilibili/22/model.2017.school.json", "model/bilibili/22/model.2017.summer.normal.1.json", "model/bilibili/22/model.2017.summer.normal.2.json", "model/bilibili/22/model.2017.summer.super.1.json", "model/bilibili/22/model.2017.summer.super.2.json", "model/bilibili/22/model.2017.tomo-bukatsu.high.json", "model/bilibili/22/model.2017.tomo-bukatsu.low.json", "model/bilibili/22/model.2017.valley.json", "model/bilibili/22/model.2017.vdays.json", "model/bilibili/22/model.2018.bls-summer.json", "model/bilibili/22/model.2018.bls-winter.json", "model/bilibili/22/model.2018.lover.json", "model/bilibili/22/model.2018.spring.json"], 
         ["model/bilibili/33/model.default.json", "model/bilibili/33/model.2016.xmas.1.json", "model/bilibili/33/model.2016.xmas.2.json", "model/bilibili/33/model.2017.cba-normal.json", "model/bilibili/33/model.2017.cba-super.json", "model/bilibili/33/model.2017.newyear.json", "model/bilibili/33/model.2017.school.json", "model/bilibili/33/model.2017.summer.normal.1.json", "model/bilibili/33/model.2017.summer.normal.2.json", "model/bilibili/33/model.2017.summer.super.1.json", "model/bilibili/33/model.2017.summer.super.2.json", "model/bilibili/33/model.2017.tomo-bukatsu.high.json", "model/bilibili/33/model.2017.tomo-bukatsu.low.json", "model/bilibili/33/model.2017.valley.json", "model/bilibili/33/model.2017.vdays.json", "model/bilibili/33/model.2018.bls-summer.json", "model/bilibili/33/model.2018.bls-winter.json", "model/bilibili/33/model.2018.lover.json", "model/bilibili/33/model.2018.spring.json"],
-        ["model/bilibili/22_high/model.json"], 
-        ["model/bilibili/23_high/model.json"], 
+        ["model/HyperdimensionNeptunia/blanc_classic/index.json", "model/HyperdimensionNeptunia/blanc_normal/index.json", "model/HyperdimensionNeptunia/blanc_swimwear/index.json"], 
+        ["model/HyperdimensionNeptunia/histoire/index.json", "model/HyperdimensionNeptunia/histoirenohover/index.json"], 
+        ["model/HyperdimensionNeptunia/nepgear/index.json", "model/HyperdimensionNeptunia/nepgearswim/index.json", "model/HyperdimensionNeptunia/nepgear_extra/index.json"], 
+        ["model/HyperdimensionNeptunia/nepmaid/index.json", "model/HyperdimensionNeptunia/nepnep/index.json", "model/HyperdimensionNeptunia/nepswim/index.json", "model/HyperdimensionNeptunia/neptune_classic/index.json", "model/HyperdimensionNeptunia/neptune_santa/index.json"], 
+        ["model/HyperdimensionNeptunia/noir_classic/index.json", "model/HyperdimensionNeptunia/noir/index.json", "model/HyperdimensionNeptunia/noir_santa/index.json", "model/HyperdimensionNeptunia/noireswim/index.json"], 
+        ["model/HyperdimensionNeptunia/vert_classic/index.json", "model/HyperdimensionNeptunia/vert_normal/index.json", "model/HyperdimensionNeptunia/vert_swimwear/index.json"],
+        ["model/KantaiCollection/murakumo/index.json"], 
+        ["model/Potion-Maker/Pio/model.json", "model/Potion-Maker/Pio/model1.json", "model/Potion-Maker/Pio/model2.json", "model/Potion-Maker/Pio/model3.json", "model/Potion-Maker/Pio/model4.json", "model/Potion-Maker/Pio/model5.json"], 
+        ["model/Potion-Maker/Tia/index.json", "model/Potion-Maker/Tia/index1.json", "model/Potion-Maker/Tia/index2.json", "model/Potion-Maker/Tia/index3.json", "model/Potion-Maker/Tia/index4.json", "model/Potion-Maker/Tia/index5.json"], 
+        ["model/ShizukuTalk/shizuku/shizuku.model.json","model/ShizukuTalk/shizuku-48/index.json","model/ShizukuTalk/shizuku-pajama/index.json"], 
+        ["model/Alice/model.json"],
         ["model/bronya/model.json"], 
-        ["model/bronya_1/model.json"], 
+        ["model/bronya_1/model.json"],
         ["model/chiaki_kitty/chiaki_kitty.model.json"],
         ["model/chitose/chitose.model.json"], 
         ["model/date_16/date_16.model.json"], 
@@ -56,19 +61,11 @@ var ModelDefine = {
         ["model/hibiki/hibiki.model.json"], 
         ["model/hijiki/hijiki.model.json"], 
         ["model/himeko/model.json"],
-        ["model/HyperdimensionNeptunia/blanc_classic/index.json", "model/HyperdimensionNeptunia/blanc_normal/index.json", "model/HyperdimensionNeptunia/blanc_swimwear/index.json"], 
-        ["model/HyperdimensionNeptunia/general/pose.json"], 
-        ["model/HyperdimensionNeptunia/histoire/index.json", "model/HyperdimensionNeptunia/histoirenohover/index.json"], 
-        ["model/HyperdimensionNeptunia/nepgear/index.json", "model/HyperdimensionNeptunia/nepgearswim/index.json", "model/HyperdimensionNeptunia/nepgear_extra/index.json"], 
-        ["model/HyperdimensionNeptunia/nepmaid/index.json", "model/HyperdimensionNeptunia/nepnep/index.json", "model/HyperdimensionNeptunia/nepswim/index.json", "model/HyperdimensionNeptunia/neptune_classic/index.json", "model/HyperdimensionNeptunia/neptune_santa/index.json"], 
-        ["model/HyperdimensionNeptunia/noir_classic/index.json", "model/HyperdimensionNeptunia/noir/index.json", "model/HyperdimensionNeptunia/noir_santa/index.json", "model/HyperdimensionNeptunia/noireswim/index.json"], 
-        ["model/HyperdimensionNeptunia/vert_classic/index.json", "model/HyperdimensionNeptunia/vert_normal/index.json", "model/HyperdimensionNeptunia/vert_swimwear/index.json"],
         ["model/iio/iio.model.json"],
         ["model/illyasviel/illyasviel.model.json"],
         ["model/index/model.json"], 
         ["model/izumi/izumi.model.json"], 
         ["model/jin/jin.model.json"],
-        ["model/KantaiCollection/murakumo/index.json"], 
         ["model/kanzaki/kanzaki.model.json"],       
         ["model/katou_01/katou_01.model.json"], 
         ["model/kiana/model.json"],
@@ -85,9 +82,9 @@ var ModelDefine = {
         ["model/miku/miku.model.json"], 
         ["model/moon/model.json"],
         ["model/penchan/penchan.model.json"],
-        ["model/platelet/model.json","model/platelet-2/model.json","model/platelet-3/model.json"], 
-        ["model/Potion-Maker/Pio/model.json", "model/Potion-Maker/Pio/model1.json", "model/Potion-Maker/Pio/model2.json", "model/Potion-Maker/Pio/model3.json", "model/Potion-Maker/Pio/model4.json", "model/Potion-Maker/Pio/model5.json"], 
-        ["model/Potion-Maker/Tia/index.json", "model/Potion-Maker/Tia/index1.json", "model/Potion-Maker/Tia/index2.json", "model/Potion-Maker/Tia/index3.json", "model/Potion-Maker/Tia/index4.json", "model/Potion-Maker/Tia/index5.json"],      
+        ["model/platelet/model.json"], 
+        ["model/platelet-2/model.json"], 
+        ["model/platelet-3/kesyoban.model.json"], 
         ["model/redeemer/model.json"],
         ["model/rem/model.json"], 
         ["model/ryoufuku/ryoufuku.model.json"],
@@ -97,7 +94,6 @@ var ModelDefine = {
         ["model/seele/model.json"],
         ["model/seifuku/seifuku.model.json"],
         ["model/shifuku/shifuku.model.json", "model/shifuku2/shifuku2.model.json"],
-        ["model/ShizukuTalk/shizuku/shizuku.model.json","model/ShizukuTalk/shizuku-48/index.json","model/ShizukuTalk/shizuku-pajama/index.json"], 
         ["model/sin/model.json"],
         ["model/snow_miku/model.json"], 
         ["model/stl/stl.model.json"],
