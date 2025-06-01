@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+  	"build": "npm run vercel-build",
     "start": "node app.js"
   },
 
