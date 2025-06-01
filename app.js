@@ -131,10 +131,12 @@ app.get('/', (req, res) => {
   res.send('Live2D');
 });
 
+// 1. 全ユーザーのリストを取得 (GET /users)
 app.get('/users', (req, res) => {
   res.json(ModelDefine.MODELS);
 });
 
+// 2. 特定のユーザーを取得 (GET /user/:id)
 app.get('/user/:id', (req, res) => {
   const id = Number(req.params.id);
   if(id<0 || id> ModelDefine.MODELS.length){
