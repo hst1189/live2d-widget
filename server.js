@@ -118,15 +118,19 @@ const ModelDefine = {
 
 const express = require('express');
 const app = express();
-const port = 80;
 app.use(express.json());
 
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
 
 // GET 接口
+app.get('/', (req, res) => {
+  res.send('Live2D');
+});
+
 app.get('/users', (req, res) => {
   res.json(ModelDefine.MODELS);
 });
