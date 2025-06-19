@@ -48,26 +48,16 @@ app.get('/demo', (req, res) => {
     }
 });
 
-// 返回 autoload.js
-app.get('/autoload', (req, res) => {
-    const indexPath = path.join(__dirname, 'autoload.js');
-    if (fs.existsSync(indexPath)) {
-        res.sendFile(indexPath);
-    } else {
-        res.status(404).json({ message: 'Model not found' });
-    }
-});
-
 
 
 // 获取所有 (GET /models)
-app.get('/models', (req, res) => {
+app.get('/api/models', (req, res) => {
 	const models = data.models
     res.json(models);
 });
 
 // 获取单个 model (GET /model/:id)
-app.get('/models/:id', (req, res) => {
+app.get('/api/models/:id', (req, res) => {
     const modelId = parseInt(req.params.id); // 将字符串 ID 转换为整数
     const model = data.models.find(model => model.id === modelId);
 
@@ -82,7 +72,6 @@ app.get('/models/:id', (req, res) => {
 
 // 启动服务器
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log('Server is running on port ${port}');
 });
-
 
