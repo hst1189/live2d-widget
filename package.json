@@ -3,12 +3,10 @@
   "description": "live2d-widget",
   "license": "MIT",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-  	"build": "npm run vercel-build",
-    "start": "node app.js"
+    "start": "node index.js"
   },
-
   "dependencies": {
     "express": "^5.1.0"
   }

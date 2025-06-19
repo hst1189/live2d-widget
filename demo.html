@@ -24,7 +24,7 @@
     <div style="position:fixed; top:0px; left:600px; background-color: white;">
         <ul>
             <li><a href="" style="color: #38A3DB; text-decoration: none;">Demo 1 - 常规引用</a></li>
-            <li><a href="" style="color: #38A3DB; text-decoration: none;"><span>Demo 2 - 自动加载 autoload.js</span></li>
+            <li><a href="" style="color: #38A3DB; text-decoration: none;">Demo 2 - 自动加载 autoload.js</a></li>
             <li><a href="" style="color: #38A3DB; text-decoration: none;">Demo 3 - 内置 waifu-tips.json</a></li>
             <li><a target="_blank" href="https://github.com/imuncle/live2d">＜致敬 Model收集者❤＞</a><li>
         </ul>
@@ -33,7 +33,10 @@
     </div>
 
     <h3>Live2D 角色配置一览 json </h3>
-    <div class="can-scroll"><ol id="model_info" style="margin-top:0px ;"></ol></div>
+    <div class="can-scroll">
+    	<ul id="models-list" style="margin-top:0px ;"><!-- 列表内容将在这里动态生成 --></ul>
+    </div>
+
 
     <!-- 动态加载 canvas live2d   添加以下2个jQuery，1个aotuload.js-->
 
@@ -41,56 +44,39 @@
     <script src=https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js></script>
     <script src=https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js></script>
     
-    <!-- 使用 aotuload.js 启动Live2D看板娘  -->
-    <script src=autoload.js></script>
+    <!-- 使用 autoload.js 启动Live2D看板娘  -->
+    <!-- <script src=autoload></script>  --> 
 
 
-
-    
-            
-    <!-- 以下为调试用 -->
-    <script src="ModelDefine.js"></script>
-    <script>
-        for(model in ModelDefine.MODELS) {
-            if(ModelDefine.MODELS[model].length == 1) {
-                document.getElementById("model_info").innerHTML += "<li>"+ModelDefine.MODELS[model][0]+"</li>";
-            } else {
-                var content = "<li>"+ModelDefine.MODELS[model][0]+"</li><ol>";
-                for(texure in ModelDefine.MODELS[model]) {
-                    content += "<li>"+ModelDefine.MODELS[model][texure]+"</li>";
-                    if(texure == ModelDefine.MODELS[model].length - 1) {
-                        content += "</ol>";
-                    }
-                }
-                document.getElementById("model_info").innerHTML += content;
-            }
+  <script>
+    // 使用 JavaScript 获取 models 数据并显示为列表
+    async function fetchModels() {
+      try {
+        const response = await fetch('/models'); // 从 API 获取数据
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
+        const data = await response.json();
 
-        var current_model_id = 1;
-        var current_texure_id = 1;
-        document.getElementById("model_id").innerHTML = current_model_id;
-        document.getElementById("texure_id").innerHTML = current_texure_id;
+        const modelsList = document.getElementById('models-list');
+        modelsList.innerHTML = ''; // 清空现有列表
 
-        btnChangeModel = document.getElementById("Change");
-        btnChangeModel.addEventListener("click", function(e) {
-            current_model_id++;
-            current_texure_id = 1;
-            if(current_model_id > ModelDefine.MODELS.length) current_model_id = 1;
-            document.getElementById("model_id").innerHTML = current_model_id;
-            document.getElementById("texure_id").innerHTML = current_texure_id;
-            loadlive2d("live2d", ModelDefine.MODELS[current_model_id-1][current_texure_id-1]);
-        })
+        data.forEach(model => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `ID: ${model.id}, Names: ${model.name.join(', ')}`; // 显示 ID 和所有名称
+          modelsList.appendChild(listItem);
+        });
 
-        btnChangeExure = document.getElementById("texure");
-        btnChangeExure.addEventListener('click', function(e) {
-            current_texure_id++;
-            if(current_texure_id > ModelDefine.MODELS[current_model_id-1].length) current_texure_id = 1;
-            document.getElementById("model_id").innerHTML = current_model_id;
-            document.getElementById("texure_id").innerHTML = current_texure_id;
-            loadlive2d("live2d", ModelDefine.MODELS[current_model_id-1][current_texure_id-1]);
-        })
+      } catch (error) {
+        console.error('Failed to fetch models:', error);
+        const modelsList = document.getElementById('models-list');
+        modelsList.textContent = 'Failed to load models.'; // 显示错误信息
+      }
+    }
 
-    </script>
+    // 在页面加载完成后调用 fetchModels 函数
+    window.onload = fetchModels;
+  </script>
 
 </body>
 </html>

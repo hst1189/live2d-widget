@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Live2D 看板娘 v1.0 Demo</title>
+    <link rel="icon" href="avatar.png">
+
+    <style>
+    /* 全要素でスクロール禁止 */
+    html, body {overflow: hidden;}
+
+    /* スクロールさせたい要素のスタイル（overflow: auto;） */
+    .can-scroll {
+        width: max-content;
+        height: 600px;
+        position: absolute;
+        top: 30;
+        left: 0;
+        overflow: auto;
+    }
+    </style>    
+</head>
+<body style="font-family: 'Microsoft YaHei';">
+
+    <div style="position:fixed; top:0px; left:0px; background-color: white;">
+        <ul>
+            <li>全部model：/models</li>
+            <li>单个model：/models/数字</li>
+            <li></li>
+            <li><a href="demo">查看Demo</a></li>
+        </ul>
+    </div>
+</body>
+</html>
