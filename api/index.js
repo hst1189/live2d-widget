@@ -1,9 +1,21 @@
 // 导入必要的模块
 const express = require('express');
 const bodyParser = require('body-parser');
-const port = 8000;
+const cors = require('cors');
+
+const port = 3000;
 const app = express();
 app.use(bodyParser.json());
+
+// 选项 1: 允许来自任何域的请求 (不推荐用于生产环境)
+// app.use(cors());
+
+// 选项 2: 允许来自特定域的请求 (推荐)
+//const corsOptions = {
+//  origin: 'http://your-domain.com', // 替换为你的域名
+//  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+//};
+//app.use(cors(corsOptions));
 
 
 let data = {
@@ -325,7 +337,6 @@ let data = {
 ]};
 
 
-
 // 获取所有 (GET /models)
 app.get('/api/models', (req, res) => {
 	const models = data.models
@@ -344,7 +355,6 @@ app.get('/api/models/:id', (req, res) => {
         res.status(404).json({ message: 'Model not found' });
     }
 });
-
 
 // 启动服务器
 app.listen(port, () => {
