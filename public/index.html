@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Live2D 看板娘 v1.0 Demo</title>
@@ -20,7 +20,14 @@
     }
     </style>    
 </head>
-<body style="font-family: 'Microsoft YaHei';">
+<body>
+
+    <div class="sidebar">
+        <button id="toggleSidebar">网站列表</button>
+        <ul id="websiteList">
+            <!-- 网站列表将在此处动态加载 -->
+        </ul>
+    </div>
 
     <div style="position:fixed; top:0px; left:0px; background-color: white;">
         <ul>
