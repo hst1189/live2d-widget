@@ -15,6 +15,7 @@ let data = {};
 try {
     const dataString = fs.readFileSync(dataFile, 'utf8');
     data = JSON.parse(dataString);
+    console.log(data.models);
     if (!data.models) {
         data.models = []; // 如果 JSON 文件中没有，则初始化为空数组
     }
@@ -25,7 +26,7 @@ try {
 
 
 
-// 返回 index.html
+// 获取 index.html
 app.get('/', (req, res) => {
     const indexPath = path.join(__dirname, 'index.html');
     if (fs.existsSync(indexPath)) {
@@ -58,6 +59,5 @@ app.get('/api/models/:id', (req, res) => {
 
 // 启动服务器
 app.listen(port, () => {
-  console.log('✅ Server is running on port ${port}');
+  console.log('Server is running on port ${port}');
 });
-
