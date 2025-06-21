@@ -2,6 +2,12 @@
 
 ## Live2d Cubism 2　使用说明
 
+## 接口用法
+```
+/models/ - 获取列表
+/models/1 - 获取分组1
+```
+
 直接引用：
 ```
 <script src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'></script>
@@ -9,8 +15,7 @@
 <script src='https://cdn.jsdelivr.net/gh/hst1189/live2d-widget/autoload.js'></script>
 ```
 
-## 参考生成API
-https://github.com/fghrsh/live2d_api
+
 
 
 ## live2d模型
@@ -42,6 +47,10 @@ https://github.com/fghrsh/live2d_api
 * [EYHN/hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d) （向hexo中添加live2d）
 * [网页添加 Live2D 看板娘](https://www.fghrsh.net/post/123.html)
 * [Live2dDemo](https://github.com/summerscar/live2dDemo) （live2d模型收集站）
+
+
+## 参考生成API
+https://github.com/fghrsh/live2d_api
 
 ## 版权须知
 所有模型均收集自互联网，版权均归原公司/个人所有。您可将资源用于学习、非营利性的网站或项目，不得用于商业使用（付费分发售卖资源、二次修改用于盈利等）。
