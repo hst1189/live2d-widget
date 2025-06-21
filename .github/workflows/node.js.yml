@@ -21,12 +21,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-         npm install express
-         npm install body-parser
-         npm install fs
-         npm install path
+        npm install express
+        npm install body-parser
+        npm install fs
+        npm install path
        
 
     - name: Start reptile
       run: |
-          node ./index.js
+        node ./index.js
