@@ -41,42 +41,11 @@
     <!-- 动态加载 canvas live2d   添加以下2个jQuery，1个aotuload.js-->
 
     <!-- waifu-tips.js 依赖 jQuery v3.3.1  -->
-    <script src=https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js></script>
-    <script src=https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js></script>
+    <!--<script src=https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js></script>-->
+    <!--<script src=https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js></script>-->
     
     <!-- 使用 autoload.js 启动Live2D看板娘  -->
-    <!-- <script src=autoload></script>  --> 
-
-
-  <script>
-    // 使用 JavaScript 获取 models 数据并显示为列表
-    async function fetchModels() {
-      try {
-        const response = await fetch('/models'); // 从 API 获取数据
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-
-        const modelsList = document.getElementById('models-list');
-        modelsList.innerHTML = ''; // 清空现有列表
-
-        data.forEach(model => {
-          const listItem = document.createElement('li');
-          listItem.textContent = `ID: ${model.id}, Names: ${model.name.join(', ')}`; // 显示 ID 和所有名称
-          modelsList.appendChild(listItem);
-        });
-
-      } catch (error) {
-        console.error('Failed to fetch models:', error);
-        const modelsList = document.getElementById('models-list');
-        modelsList.textContent = 'Failed to load models.'; // 显示错误信息
-      }
-    }
-
-    // 在页面加载完成后调用 fetchModels 函数
-    window.onload = fetchModels;
-  </script>
+    <script src=autoload.js></script>
 
 </body>
 </html>
