@@ -85,14 +85,14 @@
                                 }
                             }
                     
-                            var current_model_id = id;
+                            var current_model_id = id++;
                             var current_texure_id = 1;
-                            document.getElementById("model_id").innerHTML = current_model_id++;
+                            document.getElementById("model_id").innerHTML = current_model_id;
                             document.getElementById("texure_id").innerHTML = current_texure_id;
                     
                             btnChangeModel = document.getElementById("Change");
                             btnChangeModel.addEventListener("click", function(e) {
-                                current_model_id;
+                                current_model_id++;
                                 current_texure_id = 1;
                                 if(current_model_id > ModelDefine.MODELS.length) current_model_id = 1;
                                 document.getElementById("model_id").innerHTML = current_model_id;
