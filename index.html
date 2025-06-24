@@ -7,14 +7,58 @@
 </head>
 <body style="font-family: 'Microsoft YaHei';">
     <div style="position:fixed; top:0px; left:600px; background-color: white;">
-        <ul>
+       <h1>live2d模型收集+展示，可直接用于静态网站</h1>
+         <div>
+           ## API接口用法<br>
+           https://live2d-widget-ten.vercel.app/api/models - 获取所有<br>
+           https://live2d-widget-ten.vercel.app/api/models/数字 - 获取单个<br>
+         </div>
+         <div>
+           ## HTML直接引用<br>
+           动态加载 canvas live2d   添加以下2个jQuery，1个aotuload.js<br>
+           https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js<br>
+           https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js<br>
+           https://cdn.jsdelivr.net/gh/hst1189/live2d-widget/autoload.js<br>
+         </div>
+        <div>
+            ## live2d模型<br>
+            目前共计收录**128**个模型。<br>
+            * `model`文件夹下是live2d的模型文件，目前已收录**102**种，其中数种模型有可更换皮肤。<br>
+            
+            模型文件夹的目录大体如下：<br>
+            ```txt<br>
+            +-models（模型文件夹名称）<br>
+            |__+-texture（模型材质包）<br>
+            |__|___texture_00.png<br>
+            |__|___texture_01.png<br>
+            |__|___....<br>
+            |__+-motions（模型动作组）<br>
+            |__+-expression（模型表情组）<br>
+            |__+-sounds（模型音效）<br>
+            |__model.json（模型资源分布说明文件）<br>
+            |__model.moc（模型本体）<br>
+            ```<br>
+            部分模型有所不同。<br>
+        </div>
+        <div>
+            实例
+            <ul>
             <li><a href="" style="color: #38A3DB; text-decoration: none;">Demo 1 - 常规引用</a></li>
             <li><span>Demo 2 - 自动加载 autoload.js</span></li>
             <li><a href="" style="color: #38A3DB; text-decoration: none;">Demo 3 - 内置 waifu-tips.json</a></li>
             <li><a target="_blank" href="https://github.com/imuncle/live2d">＜致敬 Model收集者❤＞</a><li>
-        </ul>
+            </ul>
+        </div>    
         <text>　角色番号：</text><text id="model_id"></text><text>　服饰番号：</text><text id="texure_id"></text>
         <button id="Change" class="active">角色变更</button><button id="texure" class="active">服饰变更</button>
+        <div>
+            ## 相关链接<br>
+            * Live2D官方网站： https://www.live2d.com/en/ ； https://live2d.github.io）<br>
+            * [EYHN/hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d) （向hexo中添加live2d）<br>
+            * [网页添加 Live2D 看板娘](https://www.fghrsh.net/post/123.html)<br>
+            * [参考生成API](https://github.com/fghrsh/live2d_api) <br>
+            * [Live2dDemo](https://github.com/summerscar/live2dDemo) （live2d模型收集站）<br>
+        </div>
     </div>
 
     <h3>Live2D 角色配置一览 json </h3>
@@ -50,6 +94,7 @@
                             var id = Math.floor(Math.random() * ModelDefine.MODELS.length + 1) - 1;
                             live2d_settings['modelId'] = id;
                             // live2d_settings['modelTexturesId'] = 0;
+                            live2d_settings.waifuEdgeSide = "left:500";
                         
                             /* 初始化*/ 
                             initModel('./assets/waifu-tips.json');
