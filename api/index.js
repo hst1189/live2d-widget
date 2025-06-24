@@ -336,6 +336,10 @@ let data = {
     	"name":["model/z16/z16.model.json"]}
 ]};
 
+//  GET /)
+app.get('/', (req, res) => {
+    res.status(200).json({ message: 'Welcome' });
+});
 
 // 获取所有 (GET /models)
 app.get('/api/models', (req, res) => {
