@@ -8,6 +8,8 @@
 <body style="font-family: 'Microsoft YaHei';">
     <div style="position:fixed; top:0px; left:600px; background-color: white;">
        <h3>live2d模型收集+展示</h3>
+         <text>　角色番号：</text><text id="model_id"></text><text>　服饰番号：</text><text id="texure_id"></text>
+         <button id="Change" class="active">角色变更</button><button id="texure" class="active">服饰变更</button>
          <div>
            <p>## API接口用法</p>
            获取所有 - https://live2d-widget-ten.vercel.app/api/models <br>
@@ -25,10 +27,8 @@
             * [网页添加 Live2D 看板娘](https://www.fghrsh.net/post/123.html)<br>
             * [参考生成API](https://github.com/fghrsh/live2d_api) <br>
             * [Live2dDemo](https://github.com/summerscar/live2dDemo) （live2d模型收集站）<br>
-             <a target="_blank" href="https://github.com/imuncle/live2d">*＜致敬 Model收集者❤＞</a>
+            <a target="_blank" href="https://github.com/imuncle/live2d">*＜致敬 Model收集者❤＞</a>
         </div>
-        <text>　角色番号：</text><text id="model_id"></text><text>　服饰番号：</text><text id="texure_id"></text>
-        <button id="Change" class="active">角色变更</button><button id="texure" class="active">服饰变更</button>
     </div>
 
     <h3>Live2D 角色配置一览 json </h3>
@@ -85,7 +85,7 @@
                                 }
                             }
                     
-                            var current_model_id = 1;
+                            var current_model_id = id;
                             var current_texure_id = 1;
                             document.getElementById("model_id").innerHTML = current_model_id;
                             document.getElementById("texure_id").innerHTML = current_texure_id;
