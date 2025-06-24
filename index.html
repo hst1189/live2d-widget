@@ -53,6 +53,51 @@
                         
                             /* 初始化*/ 
                             initModel('./assets/waifu-tips.json');
+
+                            /* 模型遍历*/
+                            for(model in ModelDefine.MODELS) {
+                                if(ModelDefine.MODELS[model].length == 1) {
+                                    document.getElementById("model_info").innerHTML += "<li>"+ModelDefine.MODELS[model][0]+"</li>";
+                                } else {
+                                    var content = "<li>"+ModelDefine.MODELS[model][0]+"</li><ol>";
+                                    for(texure in ModelDefine.MODELS[model]) {
+                                        content += "<li>"+ModelDefine.MODELS[model][texure]+"</li>";
+                                        if(texure == ModelDefine.MODELS[model].length - 1) {
+                                            content += "</ol>";
+                                        }
+                                    }
+                                    document.getElementById("model_info").innerHTML += content;
+                                }
+                            }
+                    
+                            var current_model_id = 1;
+                            var current_texure_id = 1;
+                            document.getElementById("model_id").innerHTML = current_model_id;
+                            document.getElementById("texure_id").innerHTML = current_texure_id;
+                    
+                            btnChangeModel = document.getElementById("Change");
+                            btnChangeModel.addEventListener("click", function(e) {
+                                current_model_id++;
+                                current_texure_id = 1;
+                                if(current_model_id > ModelDefine.MODELS.length) current_model_id = 1;
+                                document.getElementById("model_id").innerHTML = current_model_id;
+                                document.getElementById("texure_id").innerHTML = current_texure_id;
+                                loadlive2d("live2d", ModelDefine.MODELS[current_model_id-1][current_texure_id-1]);
+                            })
+                    
+                            btnChangeExure = document.getElementById("texure");
+                            btnChangeExure.addEventListener('click', function(e) {
+                                current_texure_id++;
+                                if(current_texure_id > ModelDefine.MODELS[current_model_id-1].length) current_texure_id = 1;
+                                document.getElementById("model_id").innerHTML = current_model_id;
+                                document.getElementById("texure_id").innerHTML = current_texure_id;
+                                loadlive2d("live2d", ModelDefine.MODELS[current_model_id-1][current_texure_id-1]);
+                            })
+
+
+
+
+                            
                         }
                     });
                 }
@@ -64,46 +109,7 @@
     alert('[Error] JQuery is not defined.')
 }
 
-        
-        for(model in ModelDefine.MODELS) {
-            if(ModelDefine.MODELS[model].length == 1) {
-                document.getElementById("model_info").innerHTML += "<li>"+ModelDefine.MODELS[model][0]+"</li>";
-            } else {
-                var content = "<li>"+ModelDefine.MODELS[model][0]+"</li><ol>";
-                for(texure in ModelDefine.MODELS[model]) {
-                    content += "<li>"+ModelDefine.MODELS[model][texure]+"</li>";
-                    if(texure == ModelDefine.MODELS[model].length - 1) {
-                        content += "</ol>";
-                    }
-                }
-                document.getElementById("model_info").innerHTML += content;
-            }
-        }
-
-        var current_model_id = 1;
-        var current_texure_id = 1;
-        document.getElementById("model_id").innerHTML = current_model_id;
-        document.getElementById("texure_id").innerHTML = current_texure_id;
-
-        btnChangeModel = document.getElementById("Change");
-        btnChangeModel.addEventListener("click", function(e) {
-            current_model_id++;
-            current_texure_id = 1;
-            if(current_model_id > ModelDefine.MODELS.length) current_model_id = 1;
-            document.getElementById("model_id").innerHTML = current_model_id;
-            document.getElementById("texure_id").innerHTML = current_texure_id;
-            loadlive2d("live2d", ModelDefine.MODELS[current_model_id-1][current_texure_id-1]);
-        })
-
-        btnChangeExure = document.getElementById("texure");
-        btnChangeExure.addEventListener('click', function(e) {
-            current_texure_id++;
-            if(current_texure_id > ModelDefine.MODELS[current_model_id-1].length) current_texure_id = 1;
-            document.getElementById("model_id").innerHTML = current_model_id;
-            document.getElementById("texure_id").innerHTML = current_texure_id;
-            loadlive2d("live2d", ModelDefine.MODELS[current_model_id-1][current_texure_id-1]);
-        })
-
+    
     </script>
 
 </body>
